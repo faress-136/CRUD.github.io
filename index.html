@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+
+<body>
+    <div class="w-50 mx-auto text-center my-2">
+        <h1>Product Managment System</h1>
+    </div>
+
+    <div class="w-50 mx-auto my-4">
+        <div class="form-group">
+            <label for="productName" class="py-1">Product Name</label>
+            <input type="text" id="productName" onkeyup="validateInput()" class="form-control">
+            <p id="inputTest" class="text-danger fw-bolder d-none">Invalid Product name Hint: First Letter Capital</p>
+
+            <label for="productPrice" class="py-1">Product Price</label>
+            <input type="number" onkeyup="validateInput()" id="productPrice" class="form-control">
+            <p id="priceTest" class="text-danger fw-bolder d-none">Invalid price range Hint: 1000 - 10000</p>
+
+
+            <label for="productCat" class="py-1">Product Cat</label>
+            <input type="text" id="productCat" onkeyup="validateInput()" class="form-control">
+            <p id="catTest" class="text-danger fw-bolder d-none">Invalid Category Hint: (TV or mobile or device)</p>
+
+
+            <label for="productDesc" class="py-1">Product Desc</label>
+            <input type="text" id="productDesc"  onkeyup="validateInput()" class="form-control">
+            <p id="descTest" class="text-danger fw-bolder d-none">Hint: 5-500 character</p>
+
+
+        </div>
+
+        <button class="btn btn-outline-info mt-3" id="mainBtn" onclick="AddProduct()">Add Product</button>
+        <button class="btn btn-outline-warning mt-3 d-none" id="updateBtn" onclick="update()">Update</button>
+        <button class="btn btn-outline-danger mt-3 ms-1" id="clearForm" onclick="clearForm()">Clear Form</button>
+        <p id="successMsg" class="text-primary pt-2 fw-bolder d-none">Product Added Successfully</p>
+
+    </div>
+
+    <div class="w-50 mx-auto my-3">
+        <label for="Search" >Search</label>
+        <input type="text" id="Search" class="form-control" oninput="search(this.value)">
+            <!--   this ----- > here means document.getElementById() -->
+    </div>
+
+    <div class="w-50 mx-auto">
+    <table class="table">
+        <thead>
+            <th>index</th>
+            <th>productName</th> 
+            <th>productPrice</th> 
+            <th>productCategory</th> 
+            <th>productDesc</th> 
+            <th>Update</th>
+            <th>Delete</th>
+        </thead>
+
+        <tbody id="tableData">
+        
+        </tbody>
+    </table>
+    </div>
+
+
+
+
+
+
+    <script src="JS/index.js"></script>
+</body>
+</html>
